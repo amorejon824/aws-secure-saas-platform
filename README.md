@@ -9,21 +9,21 @@ The goal was to simulate how a real company might design a customer-facing platf
 ## Architecture
 
 ```text
-                Internet
+                 Internet
                     │
                     ▼
-                AWS WAF
+                 AWS WAF
                     │
                     ▼
-       Application Load Balancer
+         Application Load Balancer
                     │
                     ▼
-          ECS Fargate Service
-          (Private App Subnets)
+            ECS Fargate Service
+           (Private App Subnets)
                     │
                     ▼
-              RDS Database
-         (Private Data Subnets)
+               RDS Database
+          (Private Data Subnets)
 
 Security Monitoring
 CloudTrail → GuardDuty → EventBridge → SNS
