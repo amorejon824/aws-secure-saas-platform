@@ -1,0 +1,4 @@
+aws_region   = "us-east-1"
+project_name = "secure-saas-platform"
+db_password  = "REPLACE_WITH_SECURE_PASSWORD"
+alert_email  = "your-email@example.com"
