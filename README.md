@@ -49,25 +49,47 @@ Security Monitoring
 CloudTrail → GuardDuty → EventBridge → SNS
 ```
 
-## Screenshots
+## 📸 Architecture & Validation
 
-### WAF Blocking Malicious Request
-![WAF](screenshots/waf-blocked-request.png)
+### 🔐 WAF Protection in Action
+The platform actively blocks malicious traffic using AWS WAF.  
+The request below simulates an XSS attack and is successfully denied.
 
-### GuardDuty Findings
-![GuardDuty](screenshots/guardduty-findings.png)
+![WAF Blocked Request](./screenshots/waf-blocked-request.png)
 
-### CloudTrail Logging Enabled
-![CloudTrail](screenshots/cloudtrail-enabled.png)
+---
 
-### ECS Service Running
-![ECS](screenshots/ecs-service-running.png)
+### 🚫 403 Forbidden Response
+A malicious request was sent to the application load balancer, and access was denied, proving that security rules are enforced at the edge.
 
-### Healthy Target Group
-![Target Group](screenshots/target-group-healthy.png)
+![WAF 403 Block](./screenshots/waf-403-blocked.png)
 
-### Application Running Through ALB
-![App](screenshots/app-running-browser.png)
+---
 
-### Subnet Architecture
-![Subnets](screenshots/subnet-architecture.png)
+### 🌐 Application Load Balancer (ALB)
+The ALB is internet-facing and routes incoming traffic securely to backend services.
+
+![ALB Details](./screenshots/alb-details.png)
+
+---
+
+### ⚙️ ECS Cluster Running
+Containerized application services are deployed and running with high availability across multiple tasks.
+
+![ECS Cluster](./screenshots/ecs-cluster-running.png)
+
+---
+
+### 🎯 Target Group Health
+All backend targets are healthy, ensuring reliable traffic routing and application uptime.
+
+![Target Group](./screenshots/target-group-healthy.png)
+
+---
+
+### 🔒 Security Groups Configuration
+Strict security group rules enforce least-privilege access between ALB, application, and data layers.
+
+![Security Groups](./screenshots/security-groups.png)
+
+---
